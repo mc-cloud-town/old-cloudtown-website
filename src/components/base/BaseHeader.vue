@@ -1,8 +1,12 @@
 <template>
   <header>
-    <h1>
-      <router-link to="/">CloudTown 雲鎮</router-link>
-    </h1>
+    <router-link to="/" class="brand">
+      <img
+        src="https://cdn.discordapp.com/attachments/998810081237934100/998977829381353522/A84AAD32-680A-4395-AC99-C8E2A31151FB.gif"
+        alt="CloudTown-logo"
+      />
+      CloudTown 雲鎮
+    </router-link>
     <ul class="navbar">
       <li v-for="link in links" :key="link.name">
         <a v-if="link.self === false" :href="link.to" v-text="link.name" />
@@ -43,6 +47,22 @@ header {
   background-color: #c8c8c85e;
   justify-content: space-between;
   align-items: center;
+
+  .brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 22px;
+    font-weight: 600;
+    user-select: none;
+
+    img {
+      -webkit-user-drag: none;
+      max-height: 100%;
+      margin-right: 15px;
+      border-radius: 50%;
+    }
+  }
 
   .navbar {
     display: flex;
