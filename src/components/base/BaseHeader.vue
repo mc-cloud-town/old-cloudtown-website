@@ -7,17 +7,30 @@
       />
       CloudTown 雲鎮
     </router-link>
-    <ul class="navbar">
-      <li v-for="link in links" :key="link.name">
-        <a v-if="link.self === false" :href="link.to" v-text="link.name" />
-        <router-link v-else :to="link.to">{{ link.name }}</router-link>
-      </li>
-    </ul>
+    <div class="navbar">
+      <ul class="links" :class="{ active: openMenu }">
+        <li v-for="link in links" :key="link.name">
+          <a v-if="link.self === false" :href="link.to" v-text="link.name" />
+          <router-link v-else :to="link.to">{{ link.name }}</router-link>
+        </li>
+      </ul>
+      <input
+        id="menuToggle"
+        v-model="openMenu"
+        type="checkbox"
+        name="menuToggle"
+        hidden
+      />
+      <label class="menu-click" for="menuToggle">
+        <SvgIcon name="other-menu" />
+      </label>
+    </div>
   </header>
 </template>
 
 <script lang="ts" setup>
-import { useCssVar } from '@vueuse/core';
+import { ref } from 'vue';
+import { useCssVar, useEventListener } from '@vueuse/core';
 
 const links: LinkType[] = [
   { name: '成員', to: '/members' },
@@ -26,6 +39,8 @@ const links: LinkType[] = [
   { name: '線上地圖', to: '/map' },
 ];
 
+const openMenu = ref<boolean>(false);
+
 interface LinkType {
   name: string;
   to: string;
@@ -33,6 +48,9 @@ interface LinkType {
 }
 
 useCssVar('--page-margin-top', document.documentElement).value = '65px';
+useEventListener('resize', () => {
+  if (window.innerWidth > 650) openMenu.value = false;
+});
 </script>
 
 <style lang="scss" scoped>
@@ -57,26 +75,65 @@ header {
     user-select: none;
 
     img {
-      -webkit-user-drag: none;
       max-height: 100%;
       margin-right: 15px;
       border-radius: 50%;
+      -webkit-user-drag: none;
     }
   }
 
   .navbar {
-    display: flex;
-    list-style: none;
+    .links {
+      display: flex;
+      list-style: none;
 
-    li a {
-      width: 100%;
-      height: 100%;
-      padding: 15px 10px;
-      margin: 0 8px;
-      font-weight: 600;
+      &.active {
+        position: fixed;
+        top: var(--page-margin-top);
+        right: 0;
+        display: flex !important;
+        width: auto;
+        padding: 15px;
+        background-color: #7d7d7d5e;
+        border-bottom-left-radius: 8px;
+        flex-direction: column;
 
-      &:hover {
-        color: rgb(115 115 115);
+        li {
+          margin: 10px 0;
+          font-size: 1.2rem;
+        }
+
+        @media all and (max-width: 350px) {
+          left: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+        padding: 15px 10px;
+        margin: 0 8px;
+        font-weight: 600;
+
+        &:hover {
+          color: #737373;
+        }
+      }
+    }
+
+    .menu-click {
+      display: none;
+      cursor: pointer;
+    }
+
+    @media all and (max-width: 650px) {
+      .links {
+        display: none;
+      }
+
+      .menu-click {
+        display: block;
       }
     }
   }
