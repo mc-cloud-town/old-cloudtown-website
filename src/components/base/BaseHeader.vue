@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useCssVar, useEventListener } from '@vueuse/core';
 
 const links: LinkType[] = [
@@ -46,10 +46,11 @@ interface LinkType {
   to: string;
   self?: boolean;
 }
-
-useCssVar('--page-margin-top', document.documentElement).value = '65px';
-useEventListener('resize', () => {
-  if (window.innerWidth > 650) openMenu.value = false;
+onMounted(() => {
+  useCssVar('--page-margin-top', document.documentElement).value = '65px';
+  useEventListener('resize', () => {
+    if (window.innerWidth > 650) openMenu.value = false;
+  });
 });
 </script>
 
