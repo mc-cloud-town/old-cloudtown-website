@@ -1,6 +1,8 @@
 <template>
   <header>
-    <h1>CloudTown 雲鎮</h1>
+    <h1>
+      <router-link to="/">CloudTown 雲鎮</router-link>
+    </h1>
     <ul class="navbar">
       <li v-for="link in links" :key="link.name">
         <a v-if="link.self === false" :href="link.to" v-text="link.name" />
@@ -15,8 +17,9 @@ import { useCssVar } from '@vueuse/core';
 
 const links: LinkType[] = [
   { name: '成員', to: '/members' },
-  { name: '服內介紹', to: '/info' },
+  { name: '我們的作品', to: '/work' },
   { name: '最新進度', to: '/new' },
+  { name: '線上地圖', to: '/map' },
 ];
 
 interface LinkType {
