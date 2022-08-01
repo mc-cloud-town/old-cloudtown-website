@@ -21,6 +21,7 @@ const secondsMs = 1e3;
 const minutesMs = secondsMs * 60;
 const hoursMs = minutesMs * 60;
 const daysMs = hoursMs * 24;
+const timeStr = ['天', '小時', '分鐘', '秒'];
 
 useIntervalFn(
   () => {
@@ -36,8 +37,6 @@ useIntervalFn(
       Math.floor(leave2 / minutesMs),
       Math.round((leave2 % minutesMs) / secondsMs),
     ];
-
-    const timeStr = ['天', '小時', '分鐘', '秒'];
 
     runtimeSpan.value = timeLest
       .map((count, index) => {
