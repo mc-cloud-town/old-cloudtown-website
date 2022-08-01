@@ -14,13 +14,40 @@ import BaseSection from '@/components/home/BaseSection.vue';
 
 <style lang="scss" scoped>
 .info {
+  display: flex;
+  height: calc((100vh - var(--page-margin-top)) * 0.8);
+  min-height: 250px;
+  background-image: url('https://i.picsum.photos/id/213/1200/1200.jpg?hmac=YGpBsBoxgTZCpr6eToWxHQChbzAuLfLyB7L5G7jSAsI');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 35pt;
+  }
+
+  h3 {
+    margin-top: 5px;
+    font-size: 20pt;
+  }
+
+  &,
+  .join {
+    font-weight: 900;
+    text-shadow: 0 0 10px white;
+  }
+
   .join {
     position: relative;
+    z-index: 1;
     padding: 5px 15px;
-    font-size: 13pt;
-    font-weight: 600;
+    margin-top: 1em;
+    font-size: 16pt;
+    cursor: pointer;
     background-color: transparent;
-    // background-image: url();
     border: none;
 
     &::before {
@@ -29,10 +56,19 @@ import BaseSection from '@/components/home/BaseSection.vue';
       right: 0;
       bottom: 0;
       left: 0;
+      z-index: -1;
       border: 2px solid #000;
       content: '';
       transform: skew(-7deg);
       transition: 0.3s background-color ease, 0.3s border ease;
+    }
+
+    &:hover {
+      text-shadow: none;
+
+      &::before {
+        background-color: rgb(15 255 255 / 39.7%);
+      }
     }
   }
 }
