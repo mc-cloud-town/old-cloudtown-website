@@ -3,7 +3,7 @@
     <BaseSection class="info">
       <h1>CloudTown 雲鎮</h1>
       <h3>Minecraft 伺服器</h3>
-      <button class="join">加入雲鎮</button>
+      <a class="join" href="https://discord.gg/9wbGuaMHKN">加入雲鎮</a>
     </BaseSection>
   </div>
 </template>
@@ -22,6 +22,7 @@ import BaseSection from '@/components/home/BaseSection.vue';
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  user-select: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -63,7 +64,6 @@ import BaseSection from '@/components/home/BaseSection.vue';
     font-size: 16pt;
     cursor: pointer;
     background-color: transparent;
-    border: none;
 
     &::before {
       position: absolute;
