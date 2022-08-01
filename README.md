@@ -31,7 +31,8 @@ yarn build
 set github Environment secrets
 
 1. `TOKEN`: `<Github Build Token>`
-2. `VITE_BASE`: `<Vite Base url>` (Optional)
+2. `HOSTNAME`: `<SITEMAP_URL>`
+3. `VITE_BASE`: `<Vite Base url>` (Optional)
 
 ## ️ Technologies
 

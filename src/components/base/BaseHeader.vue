@@ -36,7 +36,8 @@ const links: LinkType[] = [
   { name: '成員', to: '/members' },
   { name: '我們的作品', to: '/work' },
   { name: '最新進度', to: '/new' },
-  { name: '線上地圖', to: '/map' },
+  // TODO to map url
+  { name: '線上地圖', to: '/map', self: false },
 ];
 
 const openMenu = ref<boolean>(false);
