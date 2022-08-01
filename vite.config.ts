@@ -1,9 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-import 'vite-ssg';
-import { defineConfig } from 'vite';
 import { fileURLToPath, URL } from 'url';
 
+import 'vite-ssg';
+import { defineConfig } from 'vite';
+import { generateSitemap } from 'sitemap-ts';
 import vue from '@vitejs/plugin-vue';
 
 import svgIcon from './plugin/svgIcon';
@@ -32,5 +33,12 @@ export default defineConfig({
     formatting: 'minify',
     dirStyle: 'nested',
     script: 'async',
+    onFinished() {
+      generateSitemap({
+        hostname: import.meta.url,
+        exclude: ['map'],
+        robots: [{ userAgent: '*', allow: '/' }],
+      });
+    },
   },
 });

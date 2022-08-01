@@ -16,6 +16,7 @@ import BaseSection from '@/components/home/BaseSection.vue';
 .info {
   display: flex;
   height: calc((100vh - var(--page-margin-top)) * 0.8);
+  max-height: 1200px;
   min-height: 250px;
   background-image: url('https://i.picsum.photos/id/213/1200/1200.jpg?hmac=YGpBsBoxgTZCpr6eToWxHQChbzAuLfLyB7L5G7jSAsI');
   background-position: center;

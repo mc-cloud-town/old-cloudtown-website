@@ -1,0 +1,27 @@
+{
+  "name": "RPMTW - 與我們一起壯大麥塊中文社群吧",
+  "short_name": "RPMTW",
+  "scope": ".",
+  "start_url": ".",
+  "lang": "zh-TW",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#0175C2",
+  "description": "RPMTW致力於推廣Minecraft中文社群與開發相關工具，期望能讓Minecraft玩家有更好的體驗。",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://www.rpmtw.com"
+    },
+    {
+      "platform": "modrinth",
+      "url": "https://modrinth.com/mod/rpmtw-update-mod/"
+    },
+    {
+      "platform": "curseForge",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/rpmtw-update-mod"
+    }
+  ]
+}
