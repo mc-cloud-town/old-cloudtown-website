@@ -35,7 +35,7 @@ export default defineConfig({
     script: 'async',
     onFinished() {
       generateSitemap({
-        hostname: process.env.HOSTNAME || void 0,
+        hostname: process.env.HOSTNAME || 'http://localhost/',
         robots: [{ userAgent: '*', allow: '/' }],
       });
     },
