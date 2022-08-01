@@ -75,6 +75,10 @@ header {
     font-weight: 600;
     user-select: none;
 
+    @media all and (max-width: 350px) {
+      font-size: 6.2vw;
+    }
+
     img {
       max-height: 100%;
       margin-right: 15px;
@@ -104,9 +108,10 @@ header {
           font-size: 1.2rem;
         }
 
-        @media all and (max-width: 350px) {
+        @media all and (max-width: 400px) {
           left: 0;
           border-bottom-left-radius: 0;
+          align-items: center;
         }
       }
 

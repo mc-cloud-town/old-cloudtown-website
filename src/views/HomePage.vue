@@ -25,6 +25,20 @@ import BaseSection from '@/components/home/BaseSection.vue';
   align-items: center;
   justify-content: center;
 
+  @media all and (max-width: 600px) {
+    h1 {
+      font-size: 7.8vw !important;
+    }
+
+    h3 {
+      font-size: 4.5vw !important;
+    }
+
+    .join {
+      font-size: 3.5vw !important;
+    }
+  }
+
   h1 {
     font-size: 35pt;
   }
