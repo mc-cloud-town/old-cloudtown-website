@@ -96,6 +96,10 @@ useIntervalFn(
   .runtime_span {
     margin-top: 30px;
     font-size: 20pt;
+
+    @media all and (max-width: 600px) {
+      font-size: 4.4vw;
+    }
   }
 
   .join {
