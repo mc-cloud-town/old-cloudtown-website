@@ -2,8 +2,10 @@
   <header>
     <router-link to="/" class="brand">
       <img
-        src="https://cdn.discordapp.com/attachments/998810081237934100/998977829381353522/A84AAD32-680A-4395-AC99-C8E2A31151FB.gif"
+        src="@/assets/images/CloudTown-45x45x.gif"
         alt="CloudTown-logo"
+        width="45"
+        height="45"
       />
       CloudTown 雲鎮
     </router-link>
