@@ -1,4 +1,5 @@
 <template>
+  <GeneralHead />
   <div class="content-wrap">
     <BaseSection class="info">
       <h1>CloudTown 雲鎮</h1>

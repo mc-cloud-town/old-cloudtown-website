@@ -1,4 +1,8 @@
 <template>
+  <GeneralHead
+    page-title="成員介紹 | 乘這雲朵飛翔的人"
+    :description="description"
+  />
   <div class="members">
     <BaseMemberComponent
       v-for="member in MembersData"
@@ -14,6 +18,14 @@ import BaseMemberComponent from '@/components/BaseMember.vue';
 import type { MemberType } from '@/types/memberInfo';
 
 const MembersData: MemberType[] = MembersData_;
+
+const fullDescription = `CloudTown 成員: ${MembersData.map((_) => _.name).join(
+  ', '
+)}`;
+const description =
+  fullDescription.length > 150
+    ? `${fullDescription.slice(0, 150).trim()}...`
+    : fullDescription;
 </script>
 
 <style lang="scss" scoped>

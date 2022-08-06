@@ -15,6 +15,7 @@
   "dependencies": {
     "@vue/eslint-config-typescript": "^11.0.0",
     "@vueuse/core": "^9.0.2",
+    "@vueuse/head": "^0.7.6",
     "atropos": "^1.0.2",
     "pinia": "^2.0.14",
     "sitemap-ts": "^0.2.1",
@@ -29,7 +30,6 @@
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "@vitejs/plugin-vue": "^2.3.3",
-    "@vueuse/head": "^0.7.6",
     "eslint": "^8.18.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",

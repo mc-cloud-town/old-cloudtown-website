@@ -1,4 +1,5 @@
 <template>
+  <GeneralHead />
   <div></div>
 </template>
 
