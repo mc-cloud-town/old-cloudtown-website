@@ -64,7 +64,7 @@ header {
   display: flex;
   height: 65px;
   padding: 10px 15px;
-  background-color: #c8c8c85e;
+  background-color: #e7e7e7cc;
   justify-content: space-between;
   align-items: center;
 
@@ -100,9 +100,17 @@ header {
         display: flex !important;
         width: auto;
         padding: 15px;
-        background-color: #7d7d7d5e;
+        background-color: #c0c0c05e;
         border-bottom-left-radius: 8px;
         flex-direction: column;
+
+        a {
+          color: #e8e8e8;
+
+          &:hover {
+            color: rgb(199 199 199);
+          }
+        }
 
         li {
           margin: 10px 0;
@@ -122,6 +130,7 @@ header {
         padding: 5px 10px;
         margin: 0 8px;
         font-weight: 600;
+        transition: 0.2s color ease-in-out;
 
         &:hover {
           color: #505050;
