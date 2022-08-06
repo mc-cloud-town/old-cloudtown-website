@@ -119,12 +119,16 @@ header {
       a {
         width: 100%;
         height: 100%;
-        padding: 15px 10px;
+        padding: 5px 10px;
         margin: 0 8px;
         font-weight: 600;
 
         &:hover {
-          color: #737373;
+          color: #505050;
+        }
+
+        &.router-link-active {
+          border-bottom: solid 2px #468587;
         }
       }
     }

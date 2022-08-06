@@ -12,19 +12,19 @@ const routes: RouteRecordRaw[] = [
     // 詳細成員介紹
     name: 'Members',
     path: '/members',
-    component: () => import('@/views/HomePage.vue'),
+    component: () => import('@/views/MembersPage.vue'),
   },
   {
     // 作品
     name: 'Work',
     path: '/work',
-    component: () => import('@/views/HomePage.vue'),
+    component: () => import('@/views/WorkPage.vue'),
   },
   {
     // 最新動態 ( 可能會串 DC )
     name: 'New',
     path: '/new',
-    component: () => import('@/views/HomePage.vue'),
+    component: () => import('@/views/NewPage.vue'),
   },
 ];
 
