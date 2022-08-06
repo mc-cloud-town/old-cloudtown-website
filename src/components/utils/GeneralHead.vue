@@ -41,6 +41,7 @@ const pageTitle = props.pageTitle || '';
 let _title: string | void = void 0;
 if (pageTitle) _title = `CloudTown 雲鎮工藝 | ${pageTitle}`;
 
+const image = props.image || 'https://www.mc-list.xyz/banner/1-1212.png';
 const keywords =
   props.keywords?.join(',') ||
   'minecraft,minecraft 伺服器,紅石服,紅石,建築,生存,生電服,雲鎮,我的世界,技術';
