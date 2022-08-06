@@ -7,7 +7,8 @@ import { defineConfig } from 'vite';
 import { generateSitemap } from 'sitemap-ts';
 import vue from '@vitejs/plugin-vue';
 
-import viteImagemin from 'vite-plugin-imagemin';
+// vite-plugin-imagemin
+// import viteImagemin from 'vite-plugin-imagemin';
 
 import svgIcon from './plugin/svgIcon';
 
@@ -17,18 +18,18 @@ export default defineConfig({
   plugins: [
     vue(),
     svgIcon(),
-    viteImagemin({
-      gifsicle: { optimizationLevel: 7, interlaced: false },
-      optipng: { optimizationLevel: 7 },
-      mozjpeg: { quality: 20 },
-      pngquant: { quality: [0.8, 0.9], speed: 4 },
-      svgo: {
-        plugins: [
-          { name: 'removeViewBox' },
-          { name: 'removeEmptyAttrs', active: false },
-        ],
-      },
-    }),
+    // viteImagemin({
+    //   gifsicle: { optimizationLevel: 7, interlaced: false },
+    //   optipng: { optimizationLevel: 7 },
+    //   mozjpeg: { quality: 20 },
+    //   pngquant: { quality: [0.8, 0.9], speed: 4 },
+    //   svgo: {
+    //     plugins: [
+    //       { name: 'removeViewBox' },
+    //       { name: 'removeEmptyAttrs', active: false },
+    //     ],
+    //   },
+    // }),
   ],
   resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
   build: {
