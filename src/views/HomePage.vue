@@ -23,7 +23,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { useIntervalFn } from '@vueuse/core';
-import BaseSection from '@/components/home/BaseSection.vue';
+import BaseSection from '@/components/BaseSection.vue';
 
 const runtimeSpan = ref('');
 const baseDate = new Date('2022-07-22T16:00:00.000Z');
