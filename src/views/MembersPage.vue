@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts" setup>
-import membersLogo from '@/assets/images/members.jpg';
+import membersLogo from '@/assets/images/2022-08-06_spawn.png';
 import MembersData_ from '@/data/members.json';
 import BaseMemberComponent from '@/components/BaseMember.vue';
 import type { MemberType } from '@/types/memberInfo';
