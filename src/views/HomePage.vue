@@ -12,9 +12,9 @@
       <h1>關於 CloudTown 雲鎮</h1>
       <div class="content">
         一個以純原版為基礎的審核制技術向伺服器，我們的核心理念是
-        <strong> 創新 </strong> 和 <strong> 研發 </strong>，
-        歡迎各種建築及紅石人才加入我們，當然如果你對 Minecraft 抱持了熱誠
-        也可以歐~
+        <strong> 創新 </strong> 和
+        <strong> 研發 </strong>，歡迎各種建築及紅石人才加入我們，當然如果你對
+        Minecraft 抱持了熱誠 也可以歐~
       </div>
     </BaseSection>
   </div>
