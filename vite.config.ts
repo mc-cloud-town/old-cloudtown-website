@@ -7,12 +7,29 @@ import { defineConfig } from 'vite';
 import { generateSitemap } from 'sitemap-ts';
 import vue from '@vitejs/plugin-vue';
 
+import viteImagemin from 'vite-plugin-imagemin';
+
 import svgIcon from './plugin/svgIcon';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: process.env.BASE_URL,
-  plugins: [vue(), svgIcon()],
+  plugins: [
+    vue(),
+    svgIcon(),
+    viteImagemin({
+      gifsicle: { optimizationLevel: 7, interlaced: false },
+      optipng: { optimizationLevel: 7 },
+      mozjpeg: { quality: 20 },
+      pngquant: { quality: [0.8, 0.9], speed: 4 },
+      svgo: {
+        plugins: [
+          { name: 'removeViewBox' },
+          { name: 'removeEmptyAttrs', active: false },
+        ],
+      },
+    }),
+  ],
   resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
   build: {
     terserOptions: {
@@ -27,6 +44,13 @@ export default defineConfig({
     // Speed up packing
     brotliSize: false,
     chunkSizeWarningLimit: 2000,
+    rollupOptions: {
+      output: {
+        entryFileNames: `static/js/[name]-[hash].js`,
+        chunkFileNames: `static/js/[name]-[hash].js`,
+        assetFileNames: `static/[ext]/[name]-[hash].[ext]`,
+      },
+    },
   },
   ssgOptions: {
     rootContainerId: 'app-mount',
