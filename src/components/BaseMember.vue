@@ -2,7 +2,7 @@
   <div class="member">
     <div class="avatar">
       <img
-        :src="`https://crafthead.net/avatar/${member.mc_uuid}`"
+        :src="`https://crafatar.com/avatars/${member.mc_uuid}`"
         alt="avatar"
       />
     </div>
