@@ -1,27 +1,19 @@
 {
-  "name": "RPMTW - 與我們一起壯大麥塊中文社群吧",
-  "short_name": "RPMTW",
+  "name": "CloudTown 雲鎮工藝 | Minecraft 生存紅石建築服",
+  "short_name": "CloudTown 雲鎮工藝",
   "scope": ".",
   "start_url": ".",
   "lang": "zh-TW",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#0175C2",
-  "description": "RPMTW致力於推廣Minecraft中文社群與開發相關工具，期望能讓Minecraft玩家有更好的體驗。",
+  "description": "CloudTown 是一個以純原版為基礎的審核制技術向伺服器，我們的核心理念是創新和研發，我們非常重視及保護成員個人的智慧財產權，並在內互助與交流技術。歡迎各種建築及紅石領域的人才加入我們，當然你抱持著Minecraft的基礎知識和熱忱也可以！",
   "orientation": "portrait-primary",
   "prefer_related_applications": false,
   "related_applications": [
     {
       "platform": "web",
-      "url": "https://www.rpmtw.com"
-    },
-    {
-      "platform": "modrinth",
-      "url": "https://modrinth.com/mod/rpmtw-update-mod/"
-    },
-    {
-      "platform": "curseForge",
-      "url": "https://www.curseforge.com/minecraft/mc-mods/rpmtw-update-mod"
+      "url": "https://mc-cloud-town.github.io/"
     }
   ]
 }
