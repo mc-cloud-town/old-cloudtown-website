@@ -2,6 +2,7 @@
   <GeneralHead
     page-title="成員介紹 | 乘這雲朵飛翔的人"
     :description="description"
+    :image="membersLogo"
   />
   <div class="members">
     <BaseMemberComponent
@@ -13,6 +14,7 @@
 </template>
 
 <script lang="ts" setup>
+import membersLogo from '@/assets/images/members.jpg';
 import MembersData_ from '@/data/members.json';
 import BaseMemberComponent from '@/components/BaseMember.vue';
 import type { MemberType } from '@/types/memberInfo';
