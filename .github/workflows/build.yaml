@@ -5,6 +5,10 @@ on:
     branches: [master]
   workflow_dispatch:
 
+env:
+  HOSTNAME: ${{ secrets.HOSTNAME }}
+  VITE_BASE: ${{ secrets.VITE_BASE }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -41,4 +45,3 @@ jobs:
           user_name: GitHub Action
           user_email: action@github.com
           cname: none
-          HOSTNAME: ${{ secrets.HOSTNAME }}
