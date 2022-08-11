@@ -102,7 +102,7 @@ header {
         display: flex !important;
         width: auto;
         padding: 15px;
-        background-color: #c0c0c05e;
+        background-color: #9b9b9b;
         border-bottom-left-radius: 8px;
         flex-direction: column;
 
@@ -110,7 +110,7 @@ header {
           color: #e8e8e8;
 
           &:hover {
-            color: rgb(199 199 199);
+            color: rgb(208 208 208);
           }
         }
 
@@ -139,7 +139,7 @@ header {
         }
 
         &.router-link-active {
-          border-bottom: solid 2px #468587;
+          border-bottom: solid 2px #1e6c6e;
         }
       }
     }
