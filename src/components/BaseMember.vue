@@ -2,7 +2,7 @@
   <div class="member">
     <div class="avatar">
       <img
-        :src="`https://crafatar.com/renders/body/${member.mc_uuid}?overlay=true&default=MHF_Steve&scale=6`"
+        :src="`https://crafatar.com/renders/body/${member.mc_uuid}.webp?overlay=true&default=MHF_Steve&scale=6`"
         alt="avatar"
       />
     </div>
