@@ -37,6 +37,7 @@ const description =
   grid-template-columns: repeat(auto-fit, 400px);
   justify-content: center;
   padding: 2em 1em;
+  background: #ecf0f1;
 
   @media all and (max-width: 500px) {
     grid-template-columns: none;
