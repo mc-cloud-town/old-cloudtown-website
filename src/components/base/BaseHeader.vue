@@ -10,22 +10,24 @@
       CloudTown 雲鎮
     </router-link>
     <div class="navbar">
-      <ul class="links" :class="{ active: openMenu }">
-        <li v-for="link in links" :key="link.name">
-          <a v-if="link.self === false" :href="link.to" v-text="link.name" />
-          <router-link v-else :to="link.to">{{ link.name }}</router-link>
-        </li>
-      </ul>
-      <input
-        id="menuToggle"
-        v-model="openMenu"
-        type="checkbox"
-        name="menuToggle"
-        hidden
-      />
-      <label class="menu-click" for="menuToggle">
-        <SvgIcon name="other-menu" />
-      </label>
+      <OnClickOutside @trigger="openMenu = false">
+        <ul class="links" :class="{ active: openMenu }">
+          <li v-for="link in links" :key="link.name">
+            <a v-if="link.self === false" :href="link.to" v-text="link.name" />
+            <router-link v-else :to="link.to">{{ link.name }}</router-link>
+          </li>
+        </ul>
+        <input
+          id="menuToggle"
+          v-model="openMenu"
+          type="checkbox"
+          name="menuToggle"
+          hidden
+        />
+        <label class="menu-click" for="menuToggle">
+          <SvgIcon name="other-menu" />
+        </label>
+      </OnClickOutside>
     </div>
   </header>
 </template>
@@ -33,6 +35,7 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
 import { useCssVar, useEventListener } from '@vueuse/core';
+import { OnClickOutside } from '@vueuse/components';
 
 const links: LinkType[] = [
   { name: '成員', to: '/members' },
