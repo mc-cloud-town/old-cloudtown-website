@@ -5,10 +5,6 @@ on:
     branches: [master]
   workflow_dispatch:
 
-env:
-  HOSTNAME: ${{ secrets.HOSTNAME }}
-  VITE_BASE: ${{ secrets.VITE_BASE }}
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -30,6 +26,9 @@ jobs:
 
       - name: deploy
         run: |
+          export HOSTNAME="${{ secrets.HOSTNAME }}"
+          export VITE_BASE="${{ secrets.VITE_BASE }}"
+
           cd dist
           [ -f 404.html ] || ln -s index.html 404.html
           if [ "none" !=  "$cname" ]; then echo "$cname" > CNAME; fi
