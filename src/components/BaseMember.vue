@@ -2,7 +2,7 @@
   <div class="member">
     <div class="avatar">
       <img
-        :src="`https://crafatar.com/avatars/${member.mc_uuid}`"
+        :src="`https://crafatar.com/renders/body/${member.mc_uuid}?overlay=true&default=MHF_Steve&scale=6`"
         alt="avatar"
       />
     </div>
@@ -37,6 +37,14 @@ defineProps<{ member: MemberType }>();
     h3 {
       font-size: 13pt;
       font-weight: 400;
+    }
+  }
+
+  @media all and (max-width: 500px) {
+    flex-direction: column;
+
+    .description {
+      text-align: center;
     }
   }
 }

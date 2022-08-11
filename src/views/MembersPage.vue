@@ -37,5 +37,13 @@ const description =
   grid-template-columns: repeat(auto-fit, 400px);
   justify-content: center;
   padding: 2em 1em;
+
+  @media all and (max-width: 500px) {
+    grid-template-columns: none;
+
+    .description {
+      text-align: center;
+    }
+  }
 }
 </style>
