@@ -12,6 +12,8 @@ import vue from '@vitejs/plugin-vue';
 
 import svgIcon from './plugin/svgIcon';
 
+console.log(process.env.HOSTNAME);
+
 // https://vitejs.dev/config/
 export default defineConfig({
   base: process.env.BASE_URL,
