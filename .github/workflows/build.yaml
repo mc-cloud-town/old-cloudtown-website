@@ -41,3 +41,4 @@ jobs:
           user_name: GitHub Action
           user_email: action@github.com
           cname: none
+          HOSTNAME: ${{ secrets.HOSTNAME }}
