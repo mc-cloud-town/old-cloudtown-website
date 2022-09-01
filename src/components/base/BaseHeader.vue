@@ -42,7 +42,7 @@ const links: LinkType[] = [
   { name: '我們的作品', to: '/work' },
   { name: '最新進度', to: '/new' },
   // TODO to map url
-  { name: '線上地圖', to: '/map', self: false },
+  { name: '線上地圖', to: '/map' },
 ];
 
 const openMenu = ref<boolean>(false);
