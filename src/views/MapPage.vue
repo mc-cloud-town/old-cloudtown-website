@@ -9,7 +9,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-const MAP_BASE_URL = 'http://ct2nd.tk';
+const MAP_BASE_URL = 'https://ct2nd.tk';
 const MapEl = ref<HTMLIFrameElement>();
 </script>
 
