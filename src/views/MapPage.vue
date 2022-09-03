@@ -1,5 +1,10 @@
 <template>
-  <GeneralHead />
+  <GeneralHead page-title="">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+  </GeneralHead>
 
   <iframe ref="MapEl" :src="MAP_BASE_URL" class="map">
     <p>Your browser does not support iframes.</p>
@@ -9,7 +14,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-const MAP_BASE_URL = 'https://ct2nd.tk';
+const MAP_BASE_URL = 'http://ct2nd.tk';
 const MapEl = ref<HTMLIFrameElement>();
 </script>
 

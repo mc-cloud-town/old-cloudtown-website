@@ -22,6 +22,8 @@
 
     <meta name="abstract" content="CloudTown 雲鎮工藝" />
     <meta name="subject" content="CloudTown 雲鎮工藝" />
+
+    <slot />
   </Head>
 </template>
 
