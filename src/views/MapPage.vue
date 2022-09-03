@@ -1,6 +1,9 @@
 <template>
   <GeneralHead page-title="">
-    <meta http-equiv="Content-Security-Policy" content="policy" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' ct2nd.tk"
+    />
   </GeneralHead>
 
   <iframe ref="MapEl" :src="MAP_BASE_URL" class="map">
