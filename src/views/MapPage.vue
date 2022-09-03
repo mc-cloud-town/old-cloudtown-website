@@ -1,9 +1,6 @@
 <template>
   <GeneralHead page-title="">
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="upgrade-insecure-requests"
-    />
+    <meta http-equiv="Content-Security-Policy" content="policy" />
   </GeneralHead>
 
   <iframe ref="MapEl" :src="MAP_BASE_URL" class="map">
