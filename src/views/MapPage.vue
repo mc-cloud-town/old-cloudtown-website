@@ -1,10 +1,5 @@
 <template>
-  <GeneralHead page-title="">
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self' ct2nd.tk"
-    />
-  </GeneralHead>
+  <GeneralHead page-title="" />
 
   <iframe ref="MapEl" :src="MAP_BASE_URL" class="map">
     <p>Your browser does not support iframes.</p>
