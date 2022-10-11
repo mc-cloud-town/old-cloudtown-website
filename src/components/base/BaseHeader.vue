@@ -13,7 +13,12 @@
       <OnClickOutside @trigger="openMenu = false">
         <ul class="links" :class="{ active: openMenu }">
           <li v-for="link in links" :key="link.name">
-            <a v-if="link.self === false" :href="link.to" v-text="link.name" />
+            <a
+              v-if="link.self === false"
+              :href="link.to"
+              target="_blank"
+              v-text="link.name"
+            />
             <router-link v-else :to="link.to">{{ link.name }}</router-link>
           </li>
         </ul>
