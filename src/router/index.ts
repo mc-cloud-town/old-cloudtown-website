@@ -26,12 +26,6 @@ const routes: RouteRecordRaw[] = [
     path: '/new',
     component: () => import('@/views/NewPage.vue'),
   },
-  {
-    // 線上地圖
-    name: 'Map',
-    path: '/map',
-    component: () => import('@/views/MapPage.vue'),
-  },
 ];
 
 export const options = (): RouterOptions => ({
