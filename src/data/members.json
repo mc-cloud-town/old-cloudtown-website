@@ -155,11 +155,6 @@
     "mc_uuid": "a6414913-96ad-4fb5-bd99-bda42084dc2d"
   },
   {
-    "name": "零零",
-    "mc_name": "Architecturn",
-    "mc_uuid": "a6414913-96ad-4fb5-bd99-bda42084dc2d"
-  },
-  {
     "name": "CatastropheLU",
     "mc_name": "CatastropheLU",
     "mc_uuid": "6750a5c2-42a9-4223-afa2-4a6b213af8ce"
@@ -210,8 +205,8 @@
     "mc_uuid": "145aae0f-f2d9-4614-8ab2-c0bc43508795"
   },
   {
-    "name": "藍箭",
-    "mc_name": "Redstone_powder",
-    "mc_uuid": "145aae0f-f2d9-4614-8ab2-c0bc43508795"
+    "name": "Todxy",
+    "mc_name": "s97342",
+    "mc_uuid": "db0520a7-5968-4b0e-afab-29d8201403bd"
   }
 ]
