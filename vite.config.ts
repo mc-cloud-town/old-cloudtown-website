@@ -6,6 +6,8 @@ import 'vite-ssg';
 import { defineConfig } from 'vite';
 import { generateSitemap } from 'sitemap-ts';
 import vue from '@vitejs/plugin-vue';
+import tosource from 'tosource';
+import { parse } from 'yaml';
 
 // vite-plugin-imagemin
 // import viteImagemin from 'vite-plugin-imagemin';
@@ -18,6 +20,14 @@ export default defineConfig({
   plugins: [
     vue(),
     svgIcon(),
+    {
+      name: 'vite:transform-yaml:',
+      transform(code, id) {
+        if (!/\.ya?ml$/.test(id)) return null;
+
+        return `const data = ${tosource(parse(code))};\nexport default data`;
+      },
+    },
     // viteImagemin({
     //   gifsicle: { optimizationLevel: 7, interlaced: false },
     //   optipng: { optimizationLevel: 7 },

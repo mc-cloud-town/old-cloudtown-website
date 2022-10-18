@@ -6,3 +6,14 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>;
   export default component;
 }
+
+declare module '*.yaml' {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const src: any;
+  export default src;
+}
+declare module '*.yml' {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const src: any;
+  export default src;
+}
