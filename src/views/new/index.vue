@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import Project from '@/components/work/TimeLine.vue';
+import Project from '@/components/new/TimeLine.vue';
 
-const data = import.meta.glob(`../../data/work/**/*.md`);
+const data = import.meta.glob(`../../data/new/**/*.md`);
 const timelineData: {
   [year: string]: {
     [month: string]: {
@@ -15,7 +15,7 @@ const timelineData: {
 } = {};
 
 for (const [path, imp] of Object.entries(data)) {
-  const projectNames = path.slice(16, -3).split('-'); // '../../data/work/' >> 16, '.md' >> 3
+  const projectNames = path.slice(15, -3).split('-'); // '../../data/new/' >> 15, '.md' >> 3
   const [y, m, d] = projectNames.shift()?.split('/') || [];
   const projectName = projectNames.join('-');
 
@@ -40,7 +40,7 @@ for (const [path, imp] of Object.entries(data)) {
         <template v-for="({ imp, id }, index) of monthValue" :key="index">
           <dt>{{ month }}月</dt>
           <dd>
-            <router-link :to="{ name: 'work-more', params: { id } }">
+            <router-link :to="{ name: 'new-more', params: { id } }">
               <suspense>
                 <Project :line-data="imp" />
               </suspense>

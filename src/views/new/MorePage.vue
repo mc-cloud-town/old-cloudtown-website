@@ -10,8 +10,8 @@ const notFound = () => router.push({ name: 'NotFound' });
 if (typeof _id !== 'string') notFound();
 
 const id = _id as string;
-const path = `../../data/work/${id.split('*').join('/')}.md`;
-const mds = import.meta.glob(`../../data/work/**/*.md`);
+const path = `../../data/new/${id.split('*').join('/')}.md`;
+const mds = import.meta.glob(`../../data/new/**/*.md`);
 
 if (!(path in mds)) notFound();
 
