@@ -73,10 +73,12 @@ for (const [path, imp] of Object.entries(data)) {
     dt {
       float: left;
       width: 60px;
+      padding: 15px 0 0;
       color: #006cd8;
     }
 
     dd {
+      padding: 15px 0 15px 60px;
       color: #666;
       border-bottom: 1px solid #eee;
     }
@@ -92,13 +94,13 @@ for (const [path, imp] of Object.entries(data)) {
     top: -1em;
     bottom: -1em;
     left: -2em;
-    border: 1px solid black;
+    border: 1px solid #e0e4e8;
   }
 
   &::after {
     top: -5px;
     left: -40px;
-    border: 8px solid black;
+    border: 8px solid #e0e4e8;
     border-radius: 50%;
   }
 }

@@ -20,5 +20,14 @@ const { VueComponent } = await mds[path]();
 
 <template>
   <GeneralHead />
-  <component :is="VueComponent" />
+  <div class="info">
+    <component :is="VueComponent" />
+  </div>
 </template>
+
+<style lang="scss" scoped>
+.info {
+  width: 80%;
+  margin: 4em auto;
+}
+</style>
