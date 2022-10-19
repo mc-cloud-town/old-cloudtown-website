@@ -9,7 +9,7 @@ const router = useRouter();
 const notFound = () => router.push({ name: 'NotFound' });
 if (typeof _id !== 'string') notFound();
 
-const id = <string>_id;
+const id = _id as string;
 const path = `../../data/work/${id.split('*').join('/')}.md`;
 const mds = import.meta.glob(`../../data/work/**/*.md`);
 
