@@ -113,6 +113,11 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
+"@types/jsonld@^1.5.7":
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/@types/jsonld/-/jsonld-1.5.7.tgz#587ac6447581d44d42ef037ecbe958aaea0074ed"
+  integrity sha512-RkIc/gMvFMiTubsy8rDHq23Dm9ig61zng5WhCjgShlbo9MBm1s0Z2JHpZwL0dwBNCNbaaOCYlFhBVozgjAU5Jg==
+
 "@types/minimist@^1.2.0":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"

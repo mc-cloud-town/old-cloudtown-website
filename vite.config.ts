@@ -13,6 +13,7 @@ import mdPlugin, { Mode } from 'vite-plugin-markdown';
 // vite-plugin-imagemin
 // import viteImagemin from 'vite-plugin-imagemin';
 
+import { RouteRecordRaw } from 'vue-router';
 import svgIcon from './plugin/svgIcon';
 
 // https://vitejs.dev/config/

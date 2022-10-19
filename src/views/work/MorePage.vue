@@ -15,11 +15,20 @@ const mds = import.meta.glob(`../../data/work/**/*.md`);
 
 if (!(path in mds)) notFound();
 
-const { VueComponent } = await mds[path]();
+const { VueComponent, attributes } = await mds[path]();
+
+const title =
+  attributes.title && attributes.time
+    ? `${attributes.title} | ${attributes.time}`
+    : attributes.title;
 </script>
 
 <template>
-  <GeneralHead />
+  <GeneralHead
+    :image="attributes.logo"
+    :title="title"
+    :description="attributes.description"
+  />
   <div class="info">
     <component :is="VueComponent" />
   </div>

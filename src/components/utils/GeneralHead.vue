@@ -28,7 +28,10 @@
 </template>
 
 <script lang="ts" setup>
-import { Head } from '@vueuse/head';
+import { onMounted, unref } from 'vue';
+import { MaybeRef } from '@vueuse/core';
+import { Head, useHead } from '@vueuse/head';
+import type { JsonLdObj } from 'jsonld/jsonld-spec';
 
 const props = defineProps<{
   title?: string;
@@ -36,6 +39,7 @@ const props = defineProps<{
   keywords?: string[];
   description?: string;
   image?: string;
+  jsonLd?: MaybeRef<JsonLdObj | JsonLdObj[]>;
 }>();
 
 const pageTitle = props.pageTitle || '';
@@ -54,4 +58,19 @@ const description =
 
 const title =
   _title || props.title || 'CloudTown 雲鎮工藝 | Minecraft 生存紅石建築服';
+
+onMounted(() => {
+  const jsonLd: JsonLdObj | JsonLdObj[] | undefined = unref(props.jsonLd);
+  if (!jsonLd) return;
+
+  useHead({
+    script: (Array.isArray(jsonLd) ? jsonLd : [jsonLd]).map((data) => ({
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org/',
+        ...data,
+      } as JsonLdObj),
+    })),
+  });
+});
 </script>
