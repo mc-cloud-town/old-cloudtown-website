@@ -8,6 +8,7 @@ import { generateSitemap } from 'sitemap-ts';
 import vue from '@vitejs/plugin-vue';
 import tosource from 'tosource';
 import { parse } from 'yaml';
+import mdPlugin, { Mode } from 'vite-plugin-markdown';
 
 // vite-plugin-imagemin
 // import viteImagemin from 'vite-plugin-imagemin';
@@ -28,6 +29,7 @@ export default defineConfig({
         return `const data = ${tosource(parse(code))};\nexport default data`;
       },
     },
+    mdPlugin({ mode: [Mode.VUE] }),
     // viteImagemin({
     //   gifsicle: { optimizationLevel: 7, interlaced: false },
     //   optipng: { optimizationLevel: 7 },

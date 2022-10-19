@@ -23,6 +23,7 @@
     "sitemap-ts": "^0.2.2",
     "tosource": "^2.0.0-alpha.3",
     "vite": "^2.9.12",
+    "vite-plugin-markdown": "^2.1.0",
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-ssg": "^0.20.2",
     "vue": "^3.2.37",

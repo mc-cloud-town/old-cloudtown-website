@@ -16,15 +16,22 @@ const routes: RouteRecordRaw[] = [
   },
   {
     // 作品
-    name: 'Work',
     path: '/work',
-    component: () => import('@/views/WorkPage.vue'),
+    children: [
+      { path: '', component: () => import('@/views/work/index.vue') },
+      { path: ':id', component: () => import('@/views/work/MorePage.vue') },
+    ],
   },
   {
     // 最新動態 ( 可能會串 DC )
     name: 'New',
     path: '/new',
     component: () => import('@/views/NewPage.vue'),
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import('@/views/NotFoundPage.vue'),
   },
 ];
 
