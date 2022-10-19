@@ -53,8 +53,34 @@ for (const [path, imp] of Object.entries(data)) {
 </template>
 
 <style lang="scss" scoped>
+.inner {
+  width: 80%;
+  margin: 4em auto;
+}
+
 .year {
   position: relative;
+
+  > h3 {
+    font-size: 40px;
+    font-weight: 900;
+    color: #006cd8;
+  }
+
+  dl {
+    line-height: 1.6;
+
+    dt {
+      float: left;
+      width: 60px;
+      color: #006cd8;
+    }
+
+    dd {
+      color: #666;
+      border-bottom: 1px solid #eee;
+    }
+  }
 
   &::after,
   &::before {
@@ -63,6 +89,17 @@ for (const [path, imp] of Object.entries(data)) {
   }
 
   &::before {
+    top: -1em;
+    bottom: -1em;
+    left: -2em;
+    border: 1px solid black;
+  }
+
+  &::after {
+    top: -5px;
+    left: -40px;
+    border: 8px solid black;
+    border-radius: 50%;
   }
 }
 </style>
