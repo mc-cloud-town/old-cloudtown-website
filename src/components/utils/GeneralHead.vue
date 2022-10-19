@@ -45,7 +45,7 @@ const props = defineProps<{
 const pageTitle = props.pageTitle || '';
 
 let _title: string | void = void 0;
-if (pageTitle) _title = `CloudTown 雲鎮工藝 | ${pageTitle}`;
+if (pageTitle) _title = `${pageTitle} | CloudTown 雲鎮工藝`;
 
 const image = props.image || 'https://www.mc-list.xyz/banner/1-1212.png';
 const keywords =

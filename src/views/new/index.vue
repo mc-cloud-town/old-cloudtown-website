@@ -27,7 +27,7 @@ for (const [path, imp] of Object.entries(data)) {
 </script>
 
 <template>
-  <GeneralHead />
+  <GeneralHead page-title="工程進度" />
 
   <section class="inner">
     <div
