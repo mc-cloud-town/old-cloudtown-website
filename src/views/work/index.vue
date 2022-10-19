@@ -5,55 +5,64 @@ const data = import.meta.glob(`../../data/work/**/*.md`);
 const timelineData: {
   [year: string]: {
     [month: string]: {
-      [day: string]: {
+      [projectName: string]: {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        [projectName: string]: () => Promise<{ [key: string]: any }>;
+        imp: () => Promise<any>;
+        id: string;
       };
     };
   };
 } = {};
 
 for (const [path, imp] of Object.entries(data)) {
-  const projectName = path.slice(16, -3); // '../../data/work/' >> 16, '.md' >> 3
-  const [y, m, d] = projectName.split('-').shift()?.split('/') || [];
+  const projectNames = path.slice(16, -3).split('-'); // '../../data/work/' >> 16, '.md' >> 3
+  const [y, m, d] = projectNames.shift()?.split('/') || [];
+  const projectName = projectNames.join('-');
 
-  timelineData[y] ||= {};
-  timelineData[y][m] ||= {};
-  timelineData[y][m][d] ||= {};
-  timelineData[y][m][d][projectName] = imp;
+  ((timelineData[y] ||= {})[m] ||= {})[projectName] = {
+    imp,
+    id: `${y}*${m}*${d}-${projectName}`,
+  };
 }
 </script>
 
 <template>
   <GeneralHead />
 
-  <div
-    v-for="(yearValue, year, index) of timelineData"
-    :key="index"
-    class="year"
-  >
+  <section class="inner">
     <div
-      v-for="(monthValue, month, index) of yearValue"
+      v-for="(yearValue, year, index) of timelineData"
       :key="index"
-      class="month"
+      class="year"
     >
-      <div
-        v-for="(dayValue, day, index) of monthValue"
-        :key="index"
-        class="day"
-      >
-        <div
-          v-for="(projectValue, name, index) of dayValue"
-          :key="index"
-          class="project"
-        >
-          <suspense>
-            <Project :line-data="projectValue" />
-          </suspense>
-        </div>
-      </div>
+      <h3>{{ year }}</h3>
+      <dl v-for="(monthValue, month, index) of yearValue" :key="index">
+        <template v-for="({ imp, id }, index) of monthValue" :key="index">
+          <dt>{{ month }}月</dt>
+          <dd>
+            <router-link :to="{ name: 'work-more', params: { id } }">
+              <suspense>
+                <Project :line-data="imp" />
+              </suspense>
+            </router-link>
+          </dd>
+        </template>
+      </dl>
     </div>
-  </div>
+  </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.year {
+  position: relative;
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: '';
+  }
+
+  &::before {
+  }
+}
+</style>

@@ -3,10 +3,8 @@ import type { Component } from 'vue';
 
 const props = defineProps<{
   lineData: () => Promise<{
-    [key: string]: {
-      VueComponent: Component;
-      attributes: Record<string, string | number | null>;
-    };
+    VueComponent: Component;
+    attributes: Record<string, string | number | null>;
   }>;
 }>();
 
@@ -14,7 +12,7 @@ const { attributes } = await props.lineData();
 </script>
 
 <template>
-  {{ attributes }}
+  {{ attributes.description }}
 </template>
 
 <style lang="scss" scoped></style>

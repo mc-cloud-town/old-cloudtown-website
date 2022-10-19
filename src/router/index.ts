@@ -19,7 +19,11 @@ const routes: RouteRecordRaw[] = [
     path: '/work',
     children: [
       { path: '', component: () => import('@/views/work/index.vue') },
-      { path: ':id', component: () => import('@/views/work/MorePage.vue') },
+      {
+        name: 'work-more',
+        path: ':id',
+        component: () => import('@/views/work/MorePage.vue'),
+      },
     ],
   },
   {
