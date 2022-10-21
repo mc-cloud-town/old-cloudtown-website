@@ -44,7 +44,7 @@ import { OnClickOutside } from '@vueuse/components';
 
 const links: LinkType[] = [
   { name: '成員', to: '/members' },
-  { name: '我們的作品', to: '/portfolio' },
+  { name: '成員作品', to: '/portfolio' },
   { name: '最新進度', to: '/new' },
   // TODO to map url
   { name: '線上地圖', to: 'http://ct2nd.tk', self: false },

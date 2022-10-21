@@ -16,7 +16,7 @@ const path = `../../data/new/${idPath.slice(0, 2).join('/')}/${fileName}`;
 
 const mds = import.meta.glob(`../../data/new/**/*.md`);
 
-// if (!(path in mds)) notFound();
+if (!(path in mds)) notFound();
 
 const { VueComponent, attributes } = await mds[path]();
 

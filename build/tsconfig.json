@@ -1,0 +1,17 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "types": ["node"],
+    "sourceMap": false,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "outDir": "./dist"
+  },
+  "include": ["src"]
+}

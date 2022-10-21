@@ -19,6 +19,11 @@ jobs:
       - name: Install
         run: yarn install
 
+      # - name: get-portfolio
+      #   run: |
+      #     yarn --cwd build run build
+      #     yarn --cwd build run start
+
       - name: Build
         run: yarn build
         env:
