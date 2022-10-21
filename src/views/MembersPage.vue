@@ -34,7 +34,7 @@ const description =
 .members {
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(auto-fit, 400px);
+  grid-template-columns: repeat(auto-fit, 300px);
   justify-content: center;
   padding: 2em 1em;
   background: #ecf0f1;

@@ -68,6 +68,7 @@ for (const [path, imp] of Object.entries(data)) {
   }
 
   dl {
+    font-weight: 900;
     line-height: 1.6;
 
     dt {
@@ -81,6 +82,10 @@ for (const [path, imp] of Object.entries(data)) {
       padding: 15px 0 15px 60px;
       color: #666;
       border-bottom: 1px solid #eee;
+    }
+
+    &:hover {
+      opacity: 0.8;
     }
   }
 
