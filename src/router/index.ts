@@ -21,28 +21,18 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/PortfolioPage.vue'),
   },
   {
-    name: 'new-more',
-    path: '/new/:id',
-    component: () => import('@/views/new/MorePage.vue'),
-  },
-  {
+    // 最新動態
     name: 'New',
     path: '/new',
-    component: () => import('@/views/new/index.vue'),
+    children: [
+      { path: '', component: () => import('@/views/new/index.vue') },
+      {
+        name: 'new-more',
+        path: ':id',
+        component: () => import('@/views/new/MorePage.vue'),
+      },
+    ],
   },
-  // {
-  //   // 最新動態 ( 可能會串 DC )
-  //   name: 'New',
-  //   path: '/new',
-  //   children: [
-  //     { path: '', component: () => import('@/views/new/index.vue') },
-  //     {
-  //       name: 'new-more',
-  //       path: ':id',
-  //       component: () => import('@/views/new/MorePage.vue'),
-  //     },
-  //   ],
-  // },
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
