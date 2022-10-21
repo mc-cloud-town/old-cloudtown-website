@@ -25,6 +25,7 @@ defineProps<{ member: MemberType }>();
 <style lang="scss" scoped>
 .member {
   display: flex;
+  height: 280px;
   gap: 15px;
   align-items: center;
 
