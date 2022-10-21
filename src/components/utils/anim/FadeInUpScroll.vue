@@ -48,9 +48,9 @@ const defaultCallback: (
   previousY = y;
   previousRatio = intersectionRatio;
 
-  if (tFalse?.includes(<StateType>(<unknown>state.value))) {
+  if (tFalse?.includes(state.value as unknown as StateType)) {
     isVisible.value = false;
-  } else if (tTrue?.includes(<StateType>(<unknown>state.value))) {
+  } else if (tTrue?.includes(state.value as unknown as StateType)) {
     isVisible.value = true;
   } else isVisible.value = isIntersecting;
 

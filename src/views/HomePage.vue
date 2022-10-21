@@ -199,6 +199,11 @@ useIntervalFn(
     margin-top: 2em;
     font-size: 14pt;
   }
+
+  h1 {
+    font-size: 20pt;
+    font-weight: 900;
+  }
 }
 
 .description-case {
