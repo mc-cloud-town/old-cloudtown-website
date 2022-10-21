@@ -10,10 +10,13 @@ const notFound = () => router.push({ name: 'NotFound' });
 if (typeof _id !== 'string') notFound();
 
 const id = _id as string;
-const path = `../../data/new/${id.split('*').join('/')}.md`;
+const idPath = id.split('-');
+const fileName = `${idPath.slice(2).join('-')}.md`;
+const path = `../../data/new/${idPath.slice(0, 2).join('/')}/${fileName}`;
+
 const mds = import.meta.glob(`../../data/new/**/*.md`);
 
-if (!(path in mds)) notFound();
+// if (!(path in mds)) notFound();
 
 const { VueComponent, attributes } = await mds[path]();
 

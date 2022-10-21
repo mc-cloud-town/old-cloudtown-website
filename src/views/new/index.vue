@@ -21,7 +21,7 @@ for (const [path, imp] of Object.entries(data)) {
 
   ((timelineData[y] ||= {})[m] ||= {})[projectName] = {
     imp,
-    id: `${y}*${m}*${d}-${projectName}`,
+    id: `${y}-${m}-${d}-${projectName}`,
   };
 }
 </script>

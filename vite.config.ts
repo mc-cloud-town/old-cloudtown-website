@@ -9,11 +9,11 @@ import vue from '@vitejs/plugin-vue';
 import tosource from 'tosource';
 import { parse } from 'yaml';
 import mdPlugin, { Mode } from 'vite-plugin-markdown';
+import glob from 'fast-glob';
 
 // vite-plugin-imagemin
 // import viteImagemin from 'vite-plugin-imagemin';
 
-import { RouteRecordRaw } from 'vue-router';
 import svgIcon from './plugin/svgIcon';
 
 // https://vitejs.dev/config/
@@ -71,6 +71,23 @@ export default defineConfig({
     formatting: 'minify',
     dirStyle: 'nested',
     script: 'async',
+    async includedRoutes(paths, _routes) {
+      const projects: string[] = [];
+
+      const newPaths = await glob('./src/data/new/**/*.md');
+      for (const path of newPaths) {
+        const projectNames = path.slice(15, -3).split('-'); // './src/data/new/' >> 15, '.md' >> 3
+        const [y, m, d] = projectNames.shift()?.split('/') || [];
+
+        projects.push(`/new/${y}-${m}-${d}-${projectNames.join('-')}`);
+      }
+
+      return paths
+        .filter((route) => !['/:pathMatch(.*)*'].includes(<string>route))
+        .flatMap((route) => {
+          return route === '/new/:id' ? projects : route;
+        });
+    },
     onFinished() {
       generateSitemap({
         hostname: process.env.HOSTNAME || 'http://localhost/',
