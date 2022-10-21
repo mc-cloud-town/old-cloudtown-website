@@ -71,6 +71,7 @@ header {
   top: 0;
   right: 0;
   left: 0;
+  z-index: 9999999999;
   display: flex;
   height: 65px;
   padding: 10px 15px;
