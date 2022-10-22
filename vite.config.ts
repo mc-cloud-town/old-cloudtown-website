@@ -9,12 +9,21 @@ import vue from '@vitejs/plugin-vue';
 import tosource from 'tosource';
 import { parse } from 'yaml';
 import mdPlugin, { Mode } from 'vite-plugin-markdown';
+import MarkdownIt from 'markdown-it';
+import emojiPlugin from 'markdown-it-emoji';
+import containerPlugin from 'markdown-it-container';
 import glob from 'fast-glob';
 
 // vite-plugin-imagemin
 // import viteImagemin from 'vite-plugin-imagemin';
 
 import svgIcon from './plugin/svgIcon';
+
+const md = MarkdownIt({
+  html: true,
+})
+  .use(emojiPlugin)
+  .use(containerPlugin);
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -30,7 +39,10 @@ export default defineConfig({
         return `const data = ${tosource(parse(code))};\nexport default data`;
       },
     },
-    mdPlugin({ mode: [Mode.VUE] }),
+    mdPlugin({
+      mode: [Mode.VUE],
+      markdownIt: md,
+    }),
     // viteImagemin({
     //   gifsicle: { optimizationLevel: 7, interlaced: false },
     //   optipng: { optimizationLevel: 7 },
