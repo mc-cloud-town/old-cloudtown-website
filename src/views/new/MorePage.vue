@@ -35,7 +35,6 @@ const logoPath = `../../data/new${attributes.logo?.slice(1)}`;
 
 const logo =
   logoPath in assets ? await assets[logoPath]().then((_) => _.default) : void 0;
-console.log(logo);
 </script>
 
 <template>
