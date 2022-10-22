@@ -30,11 +30,12 @@ const title =
       ].join('-')}`
     : attributes.title;
 
-const logo = attributes.logo
-  ? await import(/* @vite-ignore */ attributes.logo).then(
-      (_): string => _.default
-    )
-  : void 0;
+const assets = import.meta.glob(`../../data/new/**/*.{png,jpg,jpeg,gif,svg}`);
+const logoPath = `../../data/new${attributes.logo?.slice(1)}`;
+
+const logo =
+  logoPath in assets ? await assets[logoPath]().then((_) => _.default) : void 0;
+console.log(logo);
 </script>
 
 <template>
