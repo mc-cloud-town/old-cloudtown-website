@@ -27,8 +27,8 @@ jobs:
       - name: Build
         run: yarn build
         env:
-          BASE_URL: ${{ secrets.VITE_BASE }}
-          HOSTNAME: ${{ secrets.HOSTNAME }}
+          BASE_URL: /
+          HOSTNAME: https://a3510377.github.io/
 
       - name: deploy
         run: |
