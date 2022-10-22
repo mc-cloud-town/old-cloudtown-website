@@ -13,6 +13,7 @@ import MarkdownIt from 'markdown-it';
 import emojiPlugin from 'markdown-it-emoji';
 import containerPlugin from 'markdown-it-container';
 import glob from 'fast-glob';
+import viteCompression from 'vite-plugin-compression';
 
 // vite-plugin-imagemin
 // import viteImagemin from 'vite-plugin-imagemin';
@@ -31,6 +32,7 @@ export default defineConfig({
   plugins: [
     vue(),
     svgIcon(),
+    viteCompression(),
     {
       name: 'vite:transform-yaml:',
       transform(code, id) {
