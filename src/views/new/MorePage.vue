@@ -43,7 +43,7 @@ const title =
   padding-bottom: 4em;
   margin: 4em auto;
 
-  :deep(p) {
+  :deep() {
     font-size: 14pt;
 
     @for $i from 1 through 6 {
