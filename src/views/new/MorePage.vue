@@ -20,9 +20,14 @@ if (!(path in mds)) notFound();
 
 const { VueComponent, attributes } = await mds[path]();
 
+const time = attributes.time ? new Date(attributes.time) : void 0;
 const title =
-  attributes.title && attributes.time
-    ? `${attributes.title} | ${attributes.time}`
+  attributes.title && time
+    ? `${attributes.title} | ${[
+        time.getFullYear(),
+        time.getMonth() + 1,
+        time.getDate(),
+      ].join('-')}`
     : attributes.title;
 
 const logo = attributes.logo
