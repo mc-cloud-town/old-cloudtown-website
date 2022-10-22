@@ -26,7 +26,9 @@ const title =
     : attributes.title;
 
 const logo = attributes.logo
-  ? await import(attributes.logo).then((_): string => _.default)
+  ? await import(/* @vite-ignore */ attributes.logo).then(
+      (_): string => _.default
+    )
   : void 0;
 </script>
 
