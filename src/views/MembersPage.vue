@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 import membersLogo from '@/assets/images/2022-08-06_spawn.png';
-import MembersData_ from '@/data/members.json';
+import MembersData_ from '@/data/members.yaml';
 import BaseMemberComponent from '@/components/BaseMember.vue';
 import type { MemberType } from '@/types/memberInfo';
 
@@ -34,7 +34,7 @@ const description =
 .members {
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(auto-fit, 400px);
+  grid-template-columns: repeat(auto-fit, 300px);
   justify-content: center;
   padding: 2em 1em;
   background: #ecf0f1;

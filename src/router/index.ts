@@ -16,21 +16,27 @@ const routes: RouteRecordRaw[] = [
   },
   {
     // 作品
-    name: 'Work',
-    path: '/work',
-    component: () => import('@/views/WorkPage.vue'),
+    name: 'Portfolio',
+    path: '/portfolio',
+    component: () => import('@/views/PortfolioPage.vue'),
   },
   {
-    // 最新動態 ( 可能會串 DC )
+    // 最新動態
     name: 'New',
     path: '/new',
-    component: () => import('@/views/NewPage.vue'),
+    children: [
+      { path: '', component: () => import('@/views/new/index.vue') },
+      {
+        name: 'new-more',
+        path: ':id',
+        component: () => import('@/views/new/MorePage.vue'),
+      },
+    ],
   },
   {
-    // 線上地圖
-    name: 'Map',
-    path: '/map',
-    component: () => import('@/views/MapPage.vue'),
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import('@/views/NotFoundPage.vue'),
   },
 ];
 

@@ -13,7 +13,12 @@
       <OnClickOutside @trigger="openMenu = false">
         <ul class="links" :class="{ active: openMenu }">
           <li v-for="link in links" :key="link.name">
-            <a v-if="link.self === false" :href="link.to" v-text="link.name" />
+            <a
+              v-if="link.self === false"
+              :href="link.to"
+              target="_blank"
+              v-text="link.name"
+            />
             <router-link v-else :to="link.to">{{ link.name }}</router-link>
           </li>
         </ul>
@@ -39,10 +44,10 @@ import { OnClickOutside } from '@vueuse/components';
 
 const links: LinkType[] = [
   { name: '成員', to: '/members' },
-  { name: '我們的作品', to: '/work' },
+  { name: '成員作品', to: '/portfolio' },
   { name: '最新進度', to: '/new' },
   // TODO to map url
-  { name: '線上地圖', to: '/map' },
+  { name: '線上地圖', to: 'http://ct2nd.tk', self: false },
 ];
 
 const openMenu = ref<boolean>(false);
@@ -66,6 +71,7 @@ header {
   top: 0;
   right: 0;
   left: 0;
+  z-index: 9999999999;
   display: flex;
   height: 65px;
   padding: 10px 15px;
