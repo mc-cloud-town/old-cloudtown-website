@@ -26,7 +26,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-var': 'error',
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
-    'prettier/prettier': ['error'],
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
     'lines-between-class-members': 'off',
     'default-case': 'off',
     'no-use-before-define': 'off',

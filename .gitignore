@@ -127,3 +127,4 @@ dist
 .pnp.*
 
 .vite-ssg-temp
+package-lock.json
