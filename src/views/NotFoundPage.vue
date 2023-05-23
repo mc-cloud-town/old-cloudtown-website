@@ -1,4 +1,5 @@
 <template>
+  <GeneralHead page-title="找無該頁面" />
   <div>404 Not Found</div>
 </template>
 

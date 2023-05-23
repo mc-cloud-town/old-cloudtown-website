@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 import { useIntervalFn } from '@vueuse/core';
 
 import BaseSection from '@/components/BaseSection.vue';
