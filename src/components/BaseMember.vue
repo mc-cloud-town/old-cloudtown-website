@@ -2,7 +2,7 @@
   <div class="member">
     <div class="avatar">
       <img
-        :src="`https://crafatar.com/renders/body/${member.mc_uuid}.webp?overlay=true&default=MHF_Steve&scale=6`"
+        :src="`https://mineskin.eu/armor/body/${member.mc_name}/100.png`"
         alt="avatar"
       />
     </div>
@@ -25,7 +25,8 @@ defineProps<{ member: MemberType }>();
 <style lang="scss" scoped>
 .member {
   display: flex;
-  height: 280px;
+  height: 220px;
+  max-width: max-content;
   gap: 15px;
   align-items: center;
 
@@ -42,6 +43,8 @@ defineProps<{ member: MemberType }>();
   }
 
   @media all and (max-width: 500px) {
+    height: auto;
+    max-width: none;
     flex-direction: column;
 
     .description {

@@ -7,7 +7,7 @@
   <div class="members">
     <BaseMemberComponent
       v-for="member in MembersData"
-      :key="member.mc_uuid"
+      :key="member.mc_name"
       :member="member"
     />
   </div>
@@ -34,13 +34,14 @@ const description =
 .members {
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(auto-fit, 380px);
   justify-content: center;
   padding: 2em 1em;
   background: #ecf0f1;
 
   @media all and (max-width: 500px) {
     grid-template-columns: none;
+    gap: 40px;
 
     .description {
       text-align: center;
