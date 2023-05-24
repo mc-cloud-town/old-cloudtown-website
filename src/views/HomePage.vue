@@ -278,7 +278,7 @@ useIntervalFn(
     }
 
     .case-description {
-      order: 2;
+      order: unset;
     }
   }
 
