@@ -53,7 +53,7 @@ useIntervalFn(
   <GeneralHead :json-ld="{}" />
   <div class="content-wrap">
     <BaseSection class="info">
-      <FadeInUpScrollVue>
+      <FadeInUpScrollVue one>
         <h1>CloudTown 雲鎮</h1>
         <h3>Minecraft 伺服器</h3>
         <span class="runtime_span" v-text="runtimeSpan"></span>
@@ -107,7 +107,6 @@ useIntervalFn(
   display: flex;
   height: calc((100vh - var(--page-margin-top)) * 0.8);
   max-height: 1200px;
-  min-height: 250px;
   user-select: none;
   flex-direction: column;
   align-items: center;
@@ -204,6 +203,16 @@ useIntervalFn(
     font-size: 20pt;
     font-weight: 900;
   }
+
+  @media (max-width: 1000px) {
+    h1 {
+      font-size: 2.69vw !important;
+    }
+
+    .content {
+      font-size: 1.8vw !important;
+    }
+  }
 }
 
 .description-case {
@@ -213,15 +222,16 @@ useIntervalFn(
 
   .case {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    min-height: 250px;
     margin-bottom: 1em;
+    grid-template-columns: repeat(2, 1fr);
 
     .case-description {
-      align-self: center;
       display: flex;
       height: 90%;
+      padding-left: 1em;
       word-wrap: break-word;
+      justify-content: center;
+      align-self: center;
       flex-direction: column;
       align-items: flex-start;
 
@@ -237,7 +247,7 @@ useIntervalFn(
           position: absolute;
           top: -8px;
           left: 0;
-          width: 47px;
+          width: 45%;
           height: 5px;
           background: #6f6f6f;
           content: '';
@@ -258,14 +268,22 @@ useIntervalFn(
     }
   }
 
-  @media (min-width: 1000px) {
-    .case-description {
-      padding-left: 1em;
+  @media (max-width: 1000px) {
+    h1 {
+      font-size: 3.2vw !important;
     }
 
-    :nth-child(2n + 1) .case-description {
-      order: 1;
+    p {
+      font-size: 1.8vw !important;
     }
+
+    .case-description {
+      order: 2;
+    }
+  }
+
+  :nth-child(2n + 1) .case-description {
+    order: 1;
   }
 }
 </style>

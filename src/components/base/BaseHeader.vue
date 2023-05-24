@@ -89,6 +89,11 @@ header {
 
     @media all and (max-width: 350px) {
       font-size: 6.2vw;
+
+      img {
+        width: 12.2vw;
+        height: auto;
+      }
     }
 
     img {
