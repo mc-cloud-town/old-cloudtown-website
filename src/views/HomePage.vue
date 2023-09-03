@@ -53,6 +53,14 @@ useIntervalFn(
   <GeneralHead :json-ld="{}" />
   <div class="content-wrap">
     <BaseSection class="info">
+      <div class="color-overlay"></div>
+      <iframe
+        class="bg-video"
+        frameborder="0"
+        src="https://www.youtube.com/embed/7lq_6S8jjJs?controls=0&autoplay=1&mute=1&playsinline=1&loop=1"
+        allow="autoplay"
+        allowFullScreen
+      ></iframe>
       <FadeInUpScrollVue one>
         <h1>CloudTown 雲鎮</h1>
         <h3>Minecraft 伺服器</h3>
@@ -97,10 +105,33 @@ useIntervalFn(
 
 <style lang="scss" scoped>
 .info {
-  background-image: url('@/assets/images/2022-08-06_spawn.png');
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 100vh;
+  user-select: none;
+}
+
+.color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100vh !important;
+  overflow: hidden;
+  background: rgb(20 20 20 / 70%);
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  background: no-repeat center;
   background-size: cover;
+  filter: grayscale(0.6);
+  user-select: none;
 }
 
 .info > div {
