@@ -47,7 +47,7 @@ const links: LinkType[] = [
   { name: '成員作品', to: '/portfolio' },
   { name: '最新進度', to: '/new' },
   // TODO to map url
-  { name: '線上地圖', to: 'https://webmap.cloudtowne.org/', self: false },
+  { name: '線上地圖', to: 'https://ctec-webmap.monkey-cat.com/', self: false },
 ];
 
 const openMenu = ref<boolean>(false);

@@ -8,7 +8,6 @@
   },
   "stylelint.enable": true,
   "stylelint.validate": ["vue", "css", "scss", "sass"],
-  "eslint.alwaysShowStatus": true,
   "commentTranslate.multiLineMerge": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
